@@ -1,0 +1,20 @@
+<h2>Données soumises</h2>
+@if (user) {
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr><th>Prénom</th><th>Nom de famille</th><th>Téléphone</th><th>Email</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.phone || '—' }}</td>
+        <td>{{ user.email || '—' }}</td>
+      </tr>
+    </tbody>
+  </table>
+} @else {
+  <div class="alert alert-warning">
+    Aucune donnée soumise. <a routerLink="/form">Retour au formulaire</a>
+  </div>
+}
